@@ -1,89 +1,64 @@
 // VARIABLES TO ACCESS ELEMENTS
-const numberButton = document.querySelectorAll("#numbers");
-const operatorButton = document.querySelectorAll("#operators");
+const numberButtons = document.querySelectorAll("#numbers");
+const operatorButtons = document.querySelectorAll("#operators");
 const cancelButton = document.querySelector("#clear");
 const equalsButton = document.querySelector("#equals");
 const displayTotal = document.querySelector("#total");
 
 // GLOBAL SCOPE VARIABLES
-let number = "";
 let operator = "";
-let number1 = "";
-let number2 = "";
+let firstNumber = "";
+let secondNumber = "";
 let total = "";
 
 // FUNCTIONS
-
-// FUNCTION performed when a number is clicked
 const handleNumberClick = (event) => {
   const incomingNumber = event.target.innerText;
-
-  // Check if an operator has been clicked before
   if (operator === "") {
-    // If no operator has been clicked, update the first number
-    number1 += incomingNumber;
-    number = number1;
+    firstNumber += incomingNumber;
+    displayTotal.innerText = firstNumber;
   } else {
-    // If an operator has been clicked, update the second number
-    number2 += incomingNumber;
-    number = operator + number2;
+    secondNumber += incomingNumber;
+    displayTotal.innerText = secondNumber;
   }
-
-  displayTotal.innerText = number;
 };
 
-// FUNCTION performed when an operator is clicked
 const handleOperatorClick = (event) => {
   const incomingOperator = event.target.innerText;
-  operator = number;
-  number = "";
-  operator += incomingOperator;
+  operator = incomingOperator;
   displayTotal.innerText = operator;
 };
 
-// FUNCTION performed when cancel is clicked
 const handleCancelClick = () => {
   displayTotal.innerText = "0";
-  number = "";
   operator = "";
-  number1 = "";
-  number2 = "";
+  firstNumber = "";
+  secondNumber = "";
   total = "";
 };
 
-// FUNCTION performed when equals button is clicked
 const handleEqualsClick = () => {
   if (operator === "+") {
-    total = number1 + number2;
+    total = firstNumber + secondNumber;
   } else if (operator === "-") {
-    total = number1 - number2;
+    total = firstNumber - secondNumber;
   } else if (operator === "×") {
-    total = number1 * number2;
+    total = firstNumber * secondNumber;
   } else if (operator === "÷") {
-    total = number1 / number2;
+    total = firstNumber / secondNumber;
   } else {
-    total = number;
+    alert("Error, please try again...");
   }
-
   displayTotal.innerText = total;
-  number = "";
-  operator = "";
 };
 
 // EVENT LISTENERS
-
-// LISTEN for when numbers are clicked
-numberButton.forEach((button) => {
+numberButtons.forEach((button) => {
   button.addEventListener("click", handleNumberClick);
 });
-// LISTEN for when operators are clicked
-operatorButton.forEach((button) => {
+operatorButtons.forEach((button) => {
   button.addEventListener("click", handleOperatorClick);
 });
-
-// LISTEN for when cancel is clicked
 cancelButton.addEventListener("click", handleCancelClick);
-
-// LISTEN forwhen equals is clicked
 
 equalsButton.addEventListener("click", handleEqualsClick);
