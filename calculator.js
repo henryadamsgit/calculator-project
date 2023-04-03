@@ -8,6 +8,8 @@ const displayTotal = document.querySelector("#total");
 // GLOBAL SCOPE VARIABLES
 let number = "";
 let operator = "";
+let number1 = "";
+let number2 = "";
 let total = "";
 
 // FUNCTIONS
@@ -15,7 +17,18 @@ let total = "";
 // FUNCTION performed when a number is clicked
 const handleNumberClick = (event) => {
   const incomingNumber = event.target.innerText;
-  number = number + incomingNumber;
+
+  // Check if an operator has been clicked before
+  if (operator === "") {
+    // If no operator has been clicked, update the first number
+    number1 += incomingNumber;
+    number = number1;
+  } else {
+    // If an operator has been clicked, update the second number
+    number2 += incomingNumber;
+    number = operator + number2;
+  }
+
   displayTotal.innerText = number;
 };
 
@@ -32,18 +45,22 @@ const handleOperatorClick = (event) => {
 const handleCancelClick = () => {
   displayTotal.innerText = "0";
   number = "";
+  operator = "";
+  number1 = "";
+  number2 = "";
+  total = "";
 };
 
 // FUNCTION performed when equals button is clicked
 const handleEqualsClick = () => {
   if (operator === "+") {
-    total = Number(total) + Number(number);
+    total = number1 + number2;
   } else if (operator === "-") {
-    total = Number(total) - Number(number);
-  } else if (operator === "*") {
-    total = Number(total) * Number(number);
-  } else if (operator === "/") {
-    total = Number(total) / Number(number);
+    total = number1 - number2;
+  } else if (operator === "×") {
+    total = number1 * number2;
+  } else if (operator === "÷") {
+    total = number1 / number2;
   } else {
     total = number;
   }
