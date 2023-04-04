@@ -26,6 +26,15 @@ const handleNumberClick = (event) => {
 const handleOperatorClick = (event) => {
   const incomingOperator = event.target.innerText;
   operator = incomingOperator;
+  if (operator === "%") {
+    if (operator === "") {
+      firstNumber = calculatePercentage(firstNumber).toString();
+      displayTotal.innerText = firstNumber;
+    } else {
+      secondNumber = calculatePercentage(secondNumber).toString();
+      displayTotal.innerText = secondNumber;
+    }
+  }
   displayTotal.innerText = operator;
 };
 
@@ -37,19 +46,45 @@ const handleCancelClick = () => {
   total = "";
 };
 
+const handlePercentageClick = (number) => {
+  return number / 100;
+};
+
 const handleEqualsClick = () => {
   if (operator === "+") {
-    total = firstNumber + secondNumber;
+    if (secondNumber === "0") {
+      alert("Error: you cannot add 0");
+      return;
+    }
+    total = parseFloat(firstNumber) + parseFloat(secondNumber);
   } else if (operator === "-") {
-    total = firstNumber - secondNumber;
+    if (secondNumber === "0") {
+      alert("Error: you cannot minus 0");
+      return;
+    }
+    total = parseFloat(firstNumber) - parseFloat(secondNumber);
   } else if (operator === "×") {
-    total = firstNumber * secondNumber;
+    if (secondNumber === "0") {
+      alert("Error: you cannot divide by 0");
+      return;
+    }
+    total = parseFloat(firstNumber) * parseFloat(secondNumber);
   } else if (operator === "÷") {
-    total = firstNumber / secondNumber;
+    if (secondNumber === "0") {
+      alert("Error: you cannot multiply by 0");
+      return;
+    }
+    total = parseFloat(firstNumber) / parseFloat(secondNumber);
+  } else if (operator === "%") {
+    total = parseFloat(firstNumber) / 100;
   } else {
     alert("Error, please try again...");
   }
-  displayTotal.innerText = total;
+  if (Number.isInteger(total)) {
+    displayTotal.innerText = total.toString();
+  } else {
+    displayTotal.innerText = total.toFixed(2);
+  }
 };
 
 // EVENT LISTENERS

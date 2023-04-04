@@ -19,7 +19,8 @@ body {
   align-items: flex-end;
   width: auto;
   color: #f3f3f3;
-  font-size: 50px;
+  font-size: 70px;
+  padding-right: 2px;
 }
 
 .buttons {
@@ -29,9 +30,15 @@ body {
   gap: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  transition: all 0.2s ease;
 }
 .buttons .buttons:active {
   filter: brightness(150%);
+}
+.buttons .buttons:hover {
+  background-color: #000000; /* Change background color to green when hovered */
+  color: white; /* Change text color to white when hovered */
+  cursor: pointer; /* Change cursor to a pointer when hovered */
 }
 .buttons--light {
   color: #000000;

@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mediaquery";
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
@@ -21,7 +22,8 @@ body {
   align-items: flex-end;
   width: auto;
   color: $color-primary;
-  font-size: 50px;
+  font-size: 70px;
+  padding-right: 2px;
 }
 
 .buttons {
@@ -31,9 +33,16 @@ body {
   gap: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  transition: all 0.2s ease;
 
   .buttons:active {
     filter: brightness(150%);
+  }
+
+  .buttons:hover {
+    background-color: $color-secondary; /* Change background color to green when hovered */
+    color: white; /* Change text color to white when hovered */
+    cursor: pointer; /* Change cursor to a pointer when hovered */
   }
 
   &--light {

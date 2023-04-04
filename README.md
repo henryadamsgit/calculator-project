@@ -25,7 +25,7 @@ FUNCTIONS EXPLAINED:
     Triggered by the event of the cancel button being clicked. The function sets the text displayed in the calculator's total display element (displayTotal) to "0", effectively resetting the display to its initial state. I also made sure I resets the global variables 'operator', 'firstNumber', 'secondNumber', and 'total' to empty strings in order to make the calculator ready for new calculations.
 
     handleEqualsClick:
-    Triggered by the event of the equals button being clicked. It first checks which operators has been clicked, then outputs 4 different outputs based on the operators. A very simple calculation then follows if the conditions are met and the output then appears on the displayTotal. However, if the conditons are not met, the function displays an error message by triggering an alert().
+    Triggered by the event of the equals button being clicked. It first checks which operators has been clicked, then outputs 4 different outputs based on the operators. A very simple calculation then follows if the conditions are met and the output then appears on the displayTotal. However, if the conditons are not met, the function displays an error messages by triggering an alert() when different errors are encountered.
 
 EVENT LISTENERS EXPLAINED:
 
