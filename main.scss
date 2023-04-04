@@ -14,7 +14,6 @@ body {
   margin: 25px;
   background-color: $color-secondary;
   color: $color-primary;
-  padding-top: 300px;
 }
 #total {
   display: flex;
@@ -24,6 +23,7 @@ body {
   color: $color-primary;
   font-size: 70px;
   padding-right: 2px;
+  padding-top: 300px;
 }
 
 .buttons {
