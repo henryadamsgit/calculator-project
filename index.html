@@ -1,3 +1,5 @@
+<!-- from feature branch-->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -5,35 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link rel="stylesheet" href="main.css" />
-    <script src="calculator.js"></script>
   </head>
   <body>
-    <header>
-      <div>
-        <h1>1984</h1>
-      </div>
-    </header>
+    <div id="total">0</div>
 
-    <main class="buttons">
-      <button class="buttons__light">C</button>
-      <button class="buttons__light">?</button>
-      <button class="buttons__light">%</button>
-      <button class="buttons__orange">/</button>
-      <button class="buttons__dark">7</button>
-      <button class="buttons__dark">8</button>
-      <button class="buttons__dark">9</button>
-      <button class="buttons__orange">*</button>
-      <button class="buttons__dark">4</button>
-      <button class="buttons__dark">5</button>
-      <button class="buttons__dark">6</button>
-      <button class="buttons__orange">-</button>
-      <button class="buttons__dark">1</button>
-      <button class="buttons__dark">2</button>
-      <button class="buttons__dark">3</button>
-      <button class="buttons__orange">+</button>
-      <button class="buttons__dark buttons__dark--wide">0</button>
-      <button class="buttons__dark">.</button>
-      <button class="buttons__orange">=</button>
-    </main>
+    <div class="buttons">
+      <div id="clear" class="buttons buttons--light">C</div>
+      <div id="operators" class="buttons buttons--light">±</div>
+      <div id="operators" class="buttons buttons--light">%</div>
+
+      <div id="operators" class="buttons buttons--orange">÷</div>
+
+      <div id="numbers" class="buttons buttons--dark">7</div>
+      <div id="numbers" class="buttons buttons--dark">8</div>
+      <div id="numbers" class="buttons buttons--dark">9</div>
+
+      <div id="operators" class="buttons buttons--orange">×</div>
+
+      <div id="numbers" class="buttons buttons--dark">4</div>
+      <div id="numbers" class="buttons buttons--dark">5</div>
+      <div id="numbers" class="buttons buttons--dark">6</div>
+
+      <div id="operators" class="buttons buttons--orange">-</div>
+
+      <div id="numbers" class="buttons buttons--dark">1</div>
+      <div id="numbers" class="buttons buttons--dark">2</div>
+      <div id="numbers" class="buttons buttons--dark">3</div>
+
+      <div id="operators" class="buttons buttons--orange">+</div>
+      <div id="numbers" class="buttons buttons--dark buttons--wider">0</div>
+      <div id="numbers" class="buttons buttons--dark">.</div>
+      <div id="equals" class="buttons buttons--orange">=</div>
+    </div>
+    <script src="calculator.js"></script>
   </body>
 </html>
