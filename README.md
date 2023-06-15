@@ -1,5 +1,7 @@
 # calculator-project
 
+![Alt Text](75D3F98A-C019-4F1D-8B0B-D8CEEDEE8015_1_105_c.jpeg)
+
 In this project I was tasked to build a simple calculator using basic Javascript, SCSS and HTML.
 
 1. HTML: Firstly, I began this project by building out my HTML skeleton with sematically named classes and id's that would accessed by the CSS and JS files. I attemtped to follow BEM conventions throughout this file

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test:jest": "jest --watch",
+    "test:cypress": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^12.9.0"
+  }
+}

@@ -40,9 +40,9 @@ body {
   }
 
   .buttons:hover {
-    background-color: $color-secondary; /* Change background color to green when hovered */
-    color: white; /* Change text color to white when hovered */
-    cursor: pointer; /* Change cursor to a pointer when hovered */
+    background-color: $color-secondary;
+    color: white;
+    cursor: pointer;
   }
 
   &--light {
