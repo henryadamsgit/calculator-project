@@ -1,6 +1,6 @@
 # calculator-project
 
-![Alt Text](75D3F98A-C019-4F1D-8B0B-D8CEEDEE8015_1_105_c.jpeg)
+![Calculator Image](images/Screenshot%202023-06-15%20at%2018.28.29.png)
 
 In this project I was tasked to build a simple calculator using basic Javascript, SCSS and HTML.
 
